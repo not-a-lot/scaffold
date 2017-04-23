@@ -7,7 +7,8 @@
     <predef module="oppidum">flash</predef>
   </handler>
   <profile name="jquery" type="predef">
-    <script src="contribs/jquery/jquery-1.7.1.min.js"/>
+    <!--<script src="contribs/jquery/jquery-1.7.1.min.js"/>-->
+    <script src="contribs/jquery/jquery-1.7.2.js"/>
   </profile>
   <profile name="photo" type="predef">
     <link href="contribs/axel/bundles/photo/photo.css"/>
@@ -20,18 +21,23 @@
     </script>
   </profile>
   <profile name="axel-1.3-no-jquery" type="predef">
-    <link href="contribs/axel-1.3/axel.css"/>
-    <script src="contribs/axel-1.3/axel.js"/>
-    <script data-bundles-path="contribs/axel/bundles" data-when="deferred" src="contribs/axel/axel-forms.js"/>
+    <!--<link href="contribs/axel-1.3/axel.css"/>-->
+    <link href="contribs/axel-3.2/axel.css"/>
+    <!--<script src="contribs/axel-1.3/axel.js"/>-->
+    <script src="contribs/axel-3.2/axel.js"/>
+    <!--<script data-bundles-path="contribs/axel/bundles" data-when="deferred" src="contribs/axel/axel-forms.js"/>-->
+    <script data-bundles-path="contribs/axel-3.2/bundles" data-when="deferred" src="contribs/axel/axel-forms-3.2.js"/>
   </profile>
   <profile name="date" type="predef">
     <link href="contribs/jquery-ui-1.10.4/css/ui-lightness/jquery-ui-1.10.4.custom.min.css"/>
     <script src="contribs/jquery-ui-1.10.4/js/jquery-ui-1.10.4.custom.min.js"/>
   </profile>
   <profile name="select2" type="predef">
-    <link href="contribs/select2/select2.css"/>
-    <link href="contribs/select2/select2-bootstrap.css"/>
-    <script src="contribs/select2/select2.min.js"/>
+    <!--<link href="contribs/select2/select2.css"/>-->
+    <link href="contribs/select2-4.0.3/dist/css/select2.css"/>
+    <!--<link href="contribs/select2/select2-bootstrap.css"/>-->
+    <!--<script src="contribs/select2/select2.min.js"/>-->
+    <script src="contribs/select2-4.0.3/dist/js/select2.js"/>
   </profile>
   <profile name="axel">
     <predef>axel-1.3-no-jquery</predef>

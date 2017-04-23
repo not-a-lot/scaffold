@@ -945,6 +945,69 @@
   </xsl:template>
 
   <!-- *************** -->
+  <!--     Select2     -->
+  <!-- *************** -->
+  <xsl:template match="Select2">
+    <!-- for each item in the <Values> tag, espace spaces with a backslash -->
+    <xsl:variable name="values">
+      <xsl:for-each select="Values/item">
+        <xsl:call-template name="string-replace">
+          <xsl:with-param name="text" select="."/>
+          <xsl:with-param name="replace" select='" "' />
+          <xsl:with-param name="with" select='"\ "'/>
+        </xsl:call-template>
+        <!-- add a space after the value, unless this is the last value -->
+        <xsl:if test="not(position() = last())">
+          <xsl:text> </xsl:text>
+        </xsl:if>
+      </xsl:for-each>
+    </xsl:variable>
+
+    <!-- the same processing, for the i18n items -->
+    <xsl:variable name="i18n">
+      <xsl:for-each select="i18n/item">
+        <xsl:call-template name="string-replace">
+          <xsl:with-param name="text" select="."/>
+          <xsl:with-param name="replace" select='" "' />
+          <xsl:with-param name="with" select='"\ "'/>
+        </xsl:call-template>
+        <xsl:if test="not(position() = last())">
+          <xsl:text> </xsl:text>
+        </xsl:if>
+      </xsl:for-each>
+    </xsl:variable>
+
+    <xsl:variable name="def-val">
+      <xsl:call-template name="string-replace">
+        <xsl:with-param name="text" select="Values/item[@default]"/>
+        <xsl:with-param name="replace" select='" "' />
+        <xsl:with-param name="with" select='"\ "'/>
+      </xsl:call-template>
+    </xsl:variable>
+
+    <xsl:element name="{concat('xt:', @XTtype)}">
+      <xsl:attribute name="types">
+        <xsl:text>select2</xsl:text>
+      </xsl:attribute>
+      <xsl:attribute name="label">
+        <xsl:value-of select="@Tag"/>
+      </xsl:attribute>
+      <xsl:attribute name="param">
+        <xsl:value-of select="@Params"/>
+      </xsl:attribute>
+      <xsl:attribute name="values">
+        <xsl:value-of select="$values"/>
+      </xsl:attribute>
+      <xsl:attribute name="default">
+        <xsl:value-of select="$def-val"/>
+      </xsl:attribute>
+      <xsl:attribute name="i18n">
+        <xsl:value-of select="$i18n"/>
+      </xsl:attribute>
+    </xsl:element>
+  </xsl:template>
+
+  <!-- *************** -->
   <!--     Constant    -->
   <!-- *************** -->
 

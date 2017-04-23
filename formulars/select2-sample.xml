@@ -1,0 +1,29 @@
+<Form Tag="Sample" Layout="fluid" StartLevel="1"
+  xmlns:site="http://oppidoc.com/oppidum/site"
+  xmlns:xt="http://ns.inria.org/xtiger">
+  
+  <Title>Sample Select2 drop-down list</Title>
+  
+  <Row>
+    <Select2 Key="season" XTtype = "use" Tag="Season" W="12" Gap="2" Params="placeholder=Choose…">
+      <Values>
+        <item>Spring</item>
+        <item>Summer</item>
+        <item default="default">Autumn</item>
+        <item>Winter</item>
+      </Values>
+      <i18n>
+        <item>Earrach</item>
+        <item>Samhradh le spásanna</item>
+        <item>Fómhar</item>
+        <item>Geimhreadh</item>
+      </i18n>
+    </Select2>
+  </Row>
+  
+  <Bindings>
+  </Bindings>
+  <Plugins>
+  </Plugins>
+</Form>
+
