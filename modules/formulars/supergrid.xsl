@@ -1007,6 +1007,29 @@
     </xsl:element>
   </xsl:template>
 
+  <!-- a rule that replaces all occurrences of a substring within a string by another string -->
+  <!-- http://stackoverflow.com/questions/7711654/xslt-replace-single-quotes-by -->
+  <!-- with XSLT 2.0, we could use fn:replace instead, it would be much simpler -->
+  <xsl:template name="string-replace">
+    <xsl:param name="text"/>
+    <xsl:param name="replace"/>
+    <xsl:param name="with"/>
+    <xsl:choose>
+      <xsl:when test="contains($text, $replace)">
+        <xsl:value-of select="substring-before($text, $replace)"/>
+        <xsl:value-of select="$with"/>
+        <xsl:call-template name="string-replace">
+          <xsl:with-param name="text" select="substring-after($text, $replace)"/>
+          <xsl:with-param name="replace" select="$replace"/>
+          <xsl:with-param name="with" select="$with"/>
+        </xsl:call-template>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:value-of select="$text"/>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
+
   <!-- *************** -->
   <!--     Constant    -->
   <!-- *************** -->

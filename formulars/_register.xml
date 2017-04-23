@@ -59,4 +59,9 @@
     <Name>Cases statistics</Name>
     <Form>forms/stats-cases</Form>
   </Formular>
+  <!-- Select2 test -->
+  <Formular>
+    <Name>Select2 test</Name>
+    <Form>forms/select2-sample</Form>
+  </Formular>
 </Formulars>
