@@ -1,4 +1,4 @@
-<Form Tag="Character" Style="width:800px;background:gray">
+<Form xmlns:xt="http://ns.inria.org/xtiger" Tag="Character" Style="width:800px;background:gray">
   <Title>Demonstation formular</Title>
   <Row>
     <Cell W="12" Gap="1.6" Tag="RichText">
@@ -56,6 +56,29 @@
       </Row>
     </div>
   </Row>
+  <Separator/>
+  <Row>
+    <p>Test for the ajax binding on select2 elements</p>
+    <div class="food-test">
+      <p>
+        Food category : <Select2 Key="food-category" Tag="FoodCategory" values="1 2" i18n="Vegetables Fruit" Params="filter=event optional;placeholder=none"/>
+      </p>
+      <p>Food item : <Select2 Key="food-item" Tag="FoodItem" Params="filter=optional"/></p>
+    </div>
+    <!--<xt:repeat label="Food" minOccurs="1" maxOccurs="*">-->
+      <!--<fieldset class="food-test">-->
+        <!--<label><xt:menu-marker/></label>-->
+        <!--<p>-->
+          <!--Food category : <Select2 Key="food-category" Tag="FoodCategory" values="1 2" i18n="Vegetables Fruit" param="filter=event optional;placeholder=none"/>-->
+        <!--</p>-->
+        <!--<div>-->
+          <!--<xt:repeat label="FoodItems" minOccurs="0" maxOccurs="*">-->
+            <!--<p data-ajax-trigger="food-category">Food item : <Select2 Key="food-item" Tag="FoodItem" param="filter=optional"/><xt:menu-marker/></p>-->
+          <!--</xt:repeat>-->
+        <!--</div>-->
+      <!--</fieldset>-->
+    <!--</xt:repeat>-->
+  </Row>
   <Bindings>
     <Ajax data-ajax-scope=".company" Keys="company contact" Source="company" Service="^/selectors/contacts?company=$_"/>
     <Ajax data-ajax-scope=".contract" Keys="contact contract" Source="contact" Service="^/selectors/contracts?contact=$_"/>
@@ -63,6 +86,9 @@
     <Enforce>
       <RegExp Keys="age" Message="Age can only contain numbers" Pattern="[0-9]*">^\s*$|^\d*$</RegExp>
     </Enforce>
+
+    <!--<Ajax data-ajax-scope=".food-test" Keys="food-category food-item" Source="food-category" Service="^/food-service?food-category=$_"/>-->
+
   </Bindings>
   <Commands>
     <Show Key="information" DataSource="#contact" TargetModal="information" Controller="persons/$_.modal"/>

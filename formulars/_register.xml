@@ -62,6 +62,6 @@
   <!-- Select2 test -->
   <Formular>
     <Name>Select2 test</Name>
-    <Form>forms/select2-sample</Form>
+    <Form>forms/select2-test</Form>
   </Formular>
 </Formulars>

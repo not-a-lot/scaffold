@@ -275,6 +275,9 @@
     <item name="demo" epilogue="demo.xhtml">
       <model src="modules/demo/form.xql"/>
     </item>
+    <item name="select2-test" epilogue="select2-test.xhtml">
+      <model src=""/>
+    </item>
   </item>
   <!-- ************ -->
   <!-- ** admin  ** -->

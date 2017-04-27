@@ -26,7 +26,7 @@
     <!--<script src="contribs/axel-1.3/axel.js"/>-->
     <script src="contribs/axel-3.2/axel.js"/>
     <!--<script data-bundles-path="contribs/axel/bundles" data-when="deferred" src="contribs/axel/axel-forms.js"/>-->
-    <script data-bundles-path="contribs/axel-3.2/bundles" data-when="deferred" src="contribs/axel/axel-forms-3.2.js"/>
+    <script data-bundles-path="contribs/axel-3.2/bundles" data-when="deferred" src="contribs/axel-forms-3.2.js"/>
   </profile>
   <profile name="date" type="predef">
     <link href="contribs/jquery-ui-1.10.4/css/ui-lightness/jquery-ui-1.10.4.custom.min.css"/>
