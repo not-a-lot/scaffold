@@ -5,9 +5,8 @@ import module namespace oppidum = "http://oppidoc.com/oppidum/util" at "../../op
 declare option exist:serialize "method=json media-type=application/json";
 
 let $qId := xs:integer(request:get-parameter('food-category', ()))
-(:let $qId := 1 :)(: $queryTerm := 'Fruit' :)
 let $food := doc('/db/sites/scaffold/ajax-tests/food.xml')/Food
-let $category := $food/*[position() = $qId] (: $food/*[name() = $queryTerm] :)
+let $category := $food/*[position() = $qId]
   return
     <sample cache="{$qId}">
       {

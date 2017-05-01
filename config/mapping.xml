@@ -463,6 +463,9 @@
   <item name="food-service">
     <model src="models/food-service.xql"/>
   </item>
+  <item name="enterprises-service">
+    <model src="models/enterprises-service.xql"/>
+  </item>
 
   <!-- *************************** -->
   <!-- ** dictionary (optional) ** -->

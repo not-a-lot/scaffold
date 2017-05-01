@@ -58,37 +58,16 @@
   </Row>
   <Separator/>
   <Row>
-    <!--<p>Test for the ajax binding on select2 elements</p>-->
-    <!--<fieldset class="food-test">-->
-      <!--<label><xt:menu-marker/></label>-->
-      <!--<p style ="" data-binding="ajax" data-variable="food-category" data-ajax-scope=".food-test">-->
-        <!--Food category : <xt:use types="select2" label="FoodCategory" values="1 2" i18n="Vegetables Fruit" param="placeholder=none"/>-->
-      <!--</p>-->
-      <!--<div>-->
-        <!--<xt:repeat label="FoodItems" minOccurs="0" maxOccurs="*">-->
-          <!--<p style="" data-ajax-trigger="food-category">Food item : <xt:use types="select2" label="FoodItem" param="filter=optional"/><xt:menu-marker/></p>-->
-        <!--</xt:repeat>-->
-      <!--</div>-->
-    <!--</fieldset>-->
     <div class="food-test">
 
         Food category : <Select2 Key="food-category" Tag="FoodCategory" values="1 2" i18n="Vegetables Fruit" Params="filter=event;placeholder=none"/>
 
         Food item : <Select2 Key="food-item" Tag="FoodItem" Params=""/>
     </div>
-    <!--<xt:repeat label="Food" minOccurs="1" maxOccurs="*">-->
-      <!--<fieldset class="food-test">-->
-        <!--<label><xt:menu-marker/></label>-->
-        <!--<p>-->
-          <!--Food category : <Select2 Key="food-category" Tag="FoodCategory" values="1 2" i18n="Vegetables Fruit" param="filter=event optional;placeholder=none"/>-->
-        <!--</p>-->
-        <!--<div>-->
-          <!--<xt:repeat label="FoodItems" minOccurs="0" maxOccurs="*">-->
-            <!--<p data-ajax-trigger="food-category">Food item : <Select2 Key="food-item" Tag="FoodItem" param="filter=optional"/><xt:menu-marker/></p>-->
-          <!--</xt:repeat>-->
-        <!--</div>-->
-      <!--</fieldset>-->
-    <!--</xt:repeat>-->
+  </Row>
+  <Separator/>
+  <Row>
+    <Select2 Tag="Entreprise" Params="ajax-url=enterprises-service;ajax-datatype=json;ajax-delay=250;ajax-cache=yes;width=250px"/>
   </Row>
   <Bindings>
     <Ajax data-ajax-scope=".company" Keys="company contact" Source="company" Service="^/selectors/contacts?company=$_"/>
