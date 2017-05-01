@@ -459,6 +459,11 @@
       <model src="models/selectors.xql"/>
     </item>
   </item>
+
+  <item name="food-service">
+    <model src="models/food-service.xql"/>
+  </item>
+
   <!-- *************************** -->
   <!-- ** dictionary (optional) ** -->
   <!-- *************************** -->

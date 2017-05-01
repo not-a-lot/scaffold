@@ -949,15 +949,46 @@
   <!-- *************** -->
   <xsl:template match="Select2">
 
-    <xsl:choose>
-      <xsl:when test="contains(@Params, 'ajax-url')">
-        <xt:use types="select2" label="{@Tag}" param="{@Params}"/>
-      </xsl:when>
-      <xsl:otherwise>
-        <!-- generate an extension point -->
-        <xt:use types="select2" values="{@values}" i18n="{@i18n}" label="{@Tag}" param="{@Params}"/>
-      </xsl:otherwise>
-    </xsl:choose>
+    <xsl:element name="p">
+      <xsl:variable name="key">
+        <xsl:value-of select="@Key"/>
+      </xsl:variable>
+      <xsl:apply-templates select="/Form/Bindings/*[local-name(.) = 'Ajax' and contains(@Keys, $key)]">
+        <xsl:with-param name="key"><xsl:value-of select="$key"/></xsl:with-param>
+      </xsl:apply-templates>
+
+      <xsl:choose>
+        <xsl:when test="contains(@Params, 'ajax-url')">
+          <xt:use types="select2" label="{@Tag}" param="{@Params}"/>
+        </xsl:when>
+        <xsl:otherwise>
+          <!-- generate an extension point -->
+          <xsl:element name="xt:use">
+            <xsl:attribute name="types">
+              <xsl:text>select2</xsl:text>
+            </xsl:attribute>
+            <xsl:attribute name="label">
+              <xsl:value-of select="@Tag"/>
+            </xsl:attribute>
+            <xsl:attribute name="param">
+              <xsl:value-of select="@Params"/>
+            </xsl:attribute>
+            <xsl:attribute name="values">
+              <xsl:value-of select="@values"/>
+            </xsl:attribute>
+            <xsl:attribute name="default">
+              <xsl:value-of select="@default"/>
+            </xsl:attribute>
+            <xsl:attribute name="i18n">
+              <xsl:value-of select="@i18n"/>
+            </xsl:attribute>
+          </xsl:element>
+        </xsl:otherwise>
+      </xsl:choose>
+
+    </xsl:element>
+
+
     
     <!-- for each item in the <Values> tag, espace spaces with a backslash -->
     <!--<xsl:variable name="values">-->

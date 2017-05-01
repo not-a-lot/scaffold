@@ -699,8 +699,8 @@ S2.define('select2/utils',[
     // and was designed to be used with the Sizzle selector engine.
 
     var $el = $(el);
-    var overflowX = el.style.overflowX;
-    var overflowY = el.style.overflowY;
+    var overflowX = $el.css("overflowX");// el.style.overflowX;
+    var overflowY = $el.css("overflowY");// el.style.overflowY;
 
     //Check both x and y declarations
     if (overflowX === overflowY &&

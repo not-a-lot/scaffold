@@ -58,12 +58,23 @@
   </Row>
   <Separator/>
   <Row>
-    <p>Test for the ajax binding on select2 elements</p>
+    <!--<p>Test for the ajax binding on select2 elements</p>-->
+    <!--<fieldset class="food-test">-->
+      <!--<label><xt:menu-marker/></label>-->
+      <!--<p style ="" data-binding="ajax" data-variable="food-category" data-ajax-scope=".food-test">-->
+        <!--Food category : <xt:use types="select2" label="FoodCategory" values="1 2" i18n="Vegetables Fruit" param="placeholder=none"/>-->
+      <!--</p>-->
+      <!--<div>-->
+        <!--<xt:repeat label="FoodItems" minOccurs="0" maxOccurs="*">-->
+          <!--<p style="" data-ajax-trigger="food-category">Food item : <xt:use types="select2" label="FoodItem" param="filter=optional"/><xt:menu-marker/></p>-->
+        <!--</xt:repeat>-->
+      <!--</div>-->
+    <!--</fieldset>-->
     <div class="food-test">
-      <p>
-        Food category : <Select2 Key="food-category" Tag="FoodCategory" values="1 2" i18n="Vegetables Fruit" Params="filter=event optional;placeholder=none"/>
-      </p>
-      <p>Food item : <Select2 Key="food-item" Tag="FoodItem" Params="filter=optional"/></p>
+
+        Food category : <Select2 Key="food-category" Tag="FoodCategory" values="1 2" i18n="Vegetables Fruit" Params="filter=event;placeholder=none"/>
+
+        Food item : <Select2 Key="food-item" Tag="FoodItem" Params=""/>
     </div>
     <!--<xt:repeat label="Food" minOccurs="1" maxOccurs="*">-->
       <!--<fieldset class="food-test">-->
@@ -87,7 +98,7 @@
       <RegExp Keys="age" Message="Age can only contain numbers" Pattern="[0-9]*">^\s*$|^\d*$</RegExp>
     </Enforce>
 
-    <!--<Ajax data-ajax-scope=".food-test" Keys="food-category food-item" Source="food-category" Service="^/food-service?food-category=$_"/>-->
+    <Ajax data-ajax-scope=".food-test" Keys="food-category food-item" Source="food-category" Service="^/food-service?food-category=$_"/>
 
   </Bindings>
   <Commands>
