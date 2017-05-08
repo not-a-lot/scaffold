@@ -35,4 +35,7 @@ return
         server for more once the user has a scrolled down the list enough. But this requires a stateful service.
         This is independent from the incremental search mechanism that occurs gradually while the user types into
         the search field. -->
+        <!-- If <items> is outside the for loop :
+        returns : { "items" : [{ "id" : ["207", "675", "1062", "1573", "1892", "2456"], "text" : ["Secure Secure Ltd", "ONTECH SECURITY S.L.", "Dyadic Security Ltd.", "APPLIED SECURITY GMBH", "Secon Solutions Limited", "InnoSec Ltd"] }] }
+        should return : { "items" : [{ "id" : "207", "text" : "Secure Secure Ltd" }, { "id" : "675", "text" : "ONTECH SECURITY S.L." }, ... { "id" : ..., "text" : ... }, ...]} -->
       </data>
